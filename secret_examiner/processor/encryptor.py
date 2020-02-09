@@ -25,7 +25,7 @@ class Encryptor:
         """
         Encrypts the metadata.
 
-        :param metadata: list   List of lists, [[name, file_name], ...].
+        :param metadata: list   List of tuples, [(name, file_name), ...].
         :return: dict           Returns transformed metadata.
         """
         transformed_metadata = {}

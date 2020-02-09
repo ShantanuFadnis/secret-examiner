@@ -13,7 +13,7 @@ LOGGER = logging.getLogger("Secret Examiner")
 LOGGER.info("Hello from Secret Examiner App.")
 
 if __name__ == "__main__":
-    file = File("input")
+    file = File("inpu")
     metadata = file.parse_path()
     enc = Encryptor()
     transformed_metadata = enc.transform(metadata)

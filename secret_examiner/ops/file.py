@@ -10,8 +10,8 @@ import json
 logging.basicConfig(format="%(asctime)s - %(name)s - %(levelname)s: %(message)s",
                     datefmt="%Y-%m-%d %H:%M:%S",
                     level=logging.WARN)
-LOGGER = logging.getLogger("utils.file_ops.FileOps")
-LOGGER.info("Hello from file_ops module!!")
+LOGGER = logging.getLogger("ops.file.File")
+LOGGER.info("Hello from file module!!")
 
 
 class File:
@@ -34,7 +34,7 @@ class File:
     def parse_path(self) -> list:
         """
         Parse input path to extract name and file name.
-        :return: list   Returns metadata which is a list of lists, [[name, file_name], ...].
+        :return: list   Returns metadata which is a list of tuples, [(name, file_name), ...].
         """
         metadata = []
         for f in listdir(self.__path):
