@@ -1,7 +1,7 @@
 """
 File Operations Module
 """
-from os import listdir, rename, getcwd
+from os import listdir, rename, getcwd, mkdir
 from os.path import isfile, join, isdir, exists
 import logging
 import sys
@@ -90,6 +90,18 @@ class File:
         for item in transformed_metadata:
             res[item[0]] = item[1]
         return res
+
+    @staticmethod
+    def write_output(transformed_dict: dict) -> None:
+        """
+        Writes the output.
+        :param transformed_dict: dict
+        :return: None
+        """
+        if not exists("output"):
+            mkdir("output")
+        with open("output/map.json", "w") as f:
+            json.dump(transformed_dict, f, indent=2)
 
 
 if __name__ == "__main__":

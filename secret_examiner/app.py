@@ -18,4 +18,5 @@ if __name__ == "__main__":
     enc = Encryptor()
     transformed_metadata = enc.transform(metadata)
     file.rename_folders(metadata, transformed_metadata)
+    file.write_output(transformed_metadata["transformed_dict"])
     sys.exit(0)
